@@ -1,0 +1,7 @@
+2017-07-17 22:33:01	admin	http://192.168.23.130/site/processwire/setup/template/removeFields	Deleted field "fullname" data in 0 row(s) from 0 page(s). [page-by-page]
+2017-07-17 22:33:01	admin	http://192.168.23.130/site/processwire/setup/template/removeFields	Deleted field "biography" data in 0 row(s) from 0 page(s). [page-by-page]
+2017-07-18 09:34:42	admin	http://192.168.23.130/site/processwire/page/sort/	Updated sort for 7 pages
+2017-07-18 09:35:42	admin	http://192.168.23.130/site/processwire/page/sort/	Updated sort for 1 pages
+2017-07-18 09:42:05	admin	http://192.168.23.130/site/processwire/page/sort/	Updated sort for 2 pages
+2017-07-18 09:42:11	admin	http://192.168.23.130/site/processwire/page/sort/	Updated sort for 7 pages
+2017-07-18 17:49:34	exception	http://jarvis12.piratenpartei-bayern.de/processwire/profile/	Profile saved - pass
