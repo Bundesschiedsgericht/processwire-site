@@ -137,6 +137,18 @@ if(!$useMain) return;
 
 			// if no $side content was set by the template, display the homepage's sidebar text
 			if(!$side) $side = $homepage->sidebar; 
+
+            $side .= "<table>";
+            $newslist = $homepage->child("template=news_list,include=hidden");
+
+            foreach ($newslist->children as $news)
+            {
+                $side .= "<tr><th>" . date("d.m.Y", $news->created) . " - " . $news->title . "</th></tr>";
+                $side .= "<tr><td>" . $news->body . "</td></tr>";
+            }
+
+            $side .= "</table>";
+
 			echo "<div class='panel'>$side</div>"; 
 
 			?>
