@@ -47,7 +47,7 @@ function renderCompletedCases($page)
 {
 	$out = "<table>";
 	$out .= "<tr>";
-	$out .= "<th colspan=\"4\">Laufende Verfahren</th>";
+	$out .= "<th colspan=\"4\">Abgeschlossene Verfahren</th>";
 	$out .= "</tr>";
 	$out .= "<tr>";
 	$out .= "<th style=\"width:16%\">Aktenzeichen</th>";
@@ -68,7 +68,11 @@ function renderCompletedCases($page)
 			$out .= "<td>" . $child->casenumber . "</td>";
 			$out .= "<td>" . $child->casetype->title . "</td>";
 			$out .= "<td rowspan=\"2\">" . $child->matter . "</td>";
-			$out .= "<td rowspan=\"2\">" . $child->progress . "</td>";
+			if ($child->docurl != '') {
+				$out .= "<td rowspan=\"2\"><a href=\"" . $child->docurl . "\">" . $child->progress . "</a></td>";
+			} else {
+				$out .= "<td rowspan=\"2\">" . $child->progress . "</td>";
+			}
 			$out .= "</tr>";
 			$out .= "<tr>";
 			$out .= "<td>" . $child->startdate . "</td>";
