@@ -87,5 +87,6 @@ function renderCompletedCases($page)
 }
 
 
-$body .= renderActiveCases($page) . "<br/><br/>" . renderCompletedCases($page);
+$body .= 
+"<small>Alle Angaben zum Verfahrensstand sind ohne Gewähr. Es gelten ausschließlich die Angaben in den offiziellen Schriftsätzen des Gerichts. Zeitpläne zum Verfahrensverlauf sind lediglich Prognosen und dienen der Veranschaulichung des weiteren Vorgehens. Von ihnen kann jederzeit auch ohne Begründung abgewichen werden.</small><br/><br/>". renderActiveCases($page) . "<br/><br/>" . renderCompletedCases($page);
 
