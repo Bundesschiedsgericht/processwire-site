@@ -141,7 +141,7 @@ if(!$useMain) return;
             $side .= "<table>";
             $newslist = $homepage->child("template=news_list,include=hidden");
 
-            foreach ($newslist->children as $news)
+            foreach ($newslist->children("sort=-created") as $news)
             {
                 $side .= "<tr><th>" . date("d.m.Y", $news->created) . " - " . $news->title . "</th></tr>";
                 $side .= "<tr><td>" . $news->body . "</td></tr>";
