@@ -2,14 +2,16 @@
 
 function renderHearings($page)
 {
-	$out = "<table>";
+	$out = "<table style=\"width:100%;\">";
 	$out .= "<tr>";
-	$out .= "<th style=\"width:15%\">Datum und Uhrzeit</th>";
-	$out .= "<th style=\"width:15%\">Ort</th>";
-	$out .= "<th style=\"width:15%\">Aktenzeichen</th>";
-	$out .= "<th style=\"width:15%\">Spruchkörper</th>";
-	$out .= "<th style=\"width:15%\">Berichterstatter</th>";
-	$out .= "<th style=\"width:25%\">Thematik</th>";
+	$out .= "<th style=\"width:20%;\">Datum und Uhrzeit</th>";
+	$out .= "<th style=\"width:20%;\">Aktenzeichen</th>";
+	$out .= "<th style=\"width:20%; border-bottom: 1px solid #9f9f9f;\" rowspan=\"2\">Berichterstatter</th>";
+	$out .= "<th style=\"width:30%; border-bottom: 1px solid #9f9f9f;\" rowspan=\"2\">Thematik</th>";
+	$out .= "</tr>";
+	$out .= "<tr>";
+	$out .= "<th style=\"width:20%; border-bottom: 1px solid #9f9f9f;\">Ort</th>";
+	$out .= "<th style=\"width:30%; border-bottom: 1px solid #9f9f9f;\">Spruchkörper</th>";
 	$out .= "</tr>";
 
 	foreach($page->children as $child)
@@ -18,11 +20,13 @@ function renderHearings($page)
 		{
 			$out .= "<tr>";
 			$out .= "<td>" . $child->date_time . "</td>";
-			$out .= "<td>" . $child->location . "</td>";
 			$out .= "<td>" . $child->casenumber . "</td>";
-			$out .= "<td>" . $child->chamber->title . "</td>";
-			$out .= "<td>" . $child->rapporteur->title . "</td>";
-			$out .= "<td>" . $child->matter . "</td>";
+			$out .= "<td style=\"border-bottom: 1px solid #9f9f9f;\" rowspan=\"2\">" . $child->rapporteur->title . "</td>";
+			$out .= "<td style=\"border-bottom: 1px solid #9f9f9f;\" rowspan=\"2\">" . $child->matter . "</td>";
+			$out .= "</tr>";
+			$out .= "<tr>";
+			$out .= "<td style=\"border-bottom: 1px solid #9f9f9f;\">" . $child->location . "</td>";
+			$out .= "<td style=\"border-bottom: 1px solid #9f9f9f;\">" . $child->chamber->title . "</td>";
 			$out .= "</tr>";
 		}
 	}
