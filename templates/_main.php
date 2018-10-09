@@ -133,7 +133,9 @@ if(!$useMain) return;
 			}
 
 			// display sidebar navigation, except on homepage
-			if($page->id > 1) echo renderSubnav($page->rootParent); 
+			if ($page->id > 1 && $page->template != "news_item") {
+                echo renderSubnav($page->rootParent); 
+            }
 
 			// if no $side content was set by the template, display the homepage's sidebar text
 			if(!$side) $side = $homepage->sidebar; 
@@ -143,8 +145,8 @@ if(!$useMain) return;
 
             foreach ($newslist->children("sort=-created") as $news)
             {
-                $side .= "<tr><th>" . date("d.m.Y", $news->created) . " - " . $news->title . "</th></tr>";
-                $side .= "<tr><td>" . $news->body . "</td></tr>";
+                $side .= "<tr><th><a href='" . $news->url . "'>" . date("d.m.Y", $news->created) . " - " . $news->title . "</a></th></tr>";
+                $side .= "<tr><td>" . $news->summary . "</td></tr>";
             }
 
             $side .= "</table>";
